@@ -1,0 +1,629 @@
+@charset "UTF-8";
+.navBackground {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 120px; }
+  .navBackground img {
+    padding: 10px;
+    height: 80%; }
+
+/*Esta regla oculta la lista de items del menú en el tamaño de pantalla menor a 768px*/
+.barra-navegacion .lista-menu {
+  display: none; }
+
+/*El botón, en realidad, es la etiqueta (label) de una casilla de verificación (input tipo checkbox)*/
+.boton-menu {
+  box-sizing: border-box;
+  display: block;
+  color: #B9BEBA;
+  /* vh equivale a 1% de la altura de la ventana gráfica 
+    vw equivale a 1% de la anchura de la ventana gráfica*/
+  margin: 1vh;
+  height: 8vh;
+  width: 8vh;
+  border: 1px solid #B9BEBA;
+  border-radius: 5px;
+  line-height: 8vh;
+  text-align: center;
+  font-weight: bold;
+  /*Esta declaración impide que el usuario pueda seleccionar el botón, sólo se puede hacer click en él*/
+  user-select: none; }
+
+/*
+Esta regla cambia el comportamiento del botón (checkbox) al estar clickeado, usando pseudoclases y selectores de hermanos generales.
+El combinador ~ (virgulilla) separa dos selectores y selecciona el segundo elemento (en este caso, .boton-menu) sólo si está precedido por el primero (en este caso, input:checked) y ambos comparten un padre común (en este caso, .barra-navegacion).
+*/
+.barra-navegacion input:checked ~ .boton-menu {
+  background: #B9BEBA;
+  color: #1e2639;
+  border-color: #1e2639; }
+
+.barra-navegacion input:checked ~ .lista-menu {
+  display: block;
+  position: fixed;
+  top: 15vh;
+  right: 0;
+  z-index: 4;
+  width: 100vw;
+  left: 0;
+  background-color: #1e2639be;
+  /*Acá el hexa tiene 4 pares de valores, el último corresponde al canal alpha*/ }
+
+/*Escondemos el checkbox en sí, pero como mantenemos visible su etiqueta (el botón), se puede seguir usando*/
+#check-menu {
+  display: none; }
+
+.item-menu {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid grey; }
+  .item-menuhover {
+    filter: brightness(120%); }
+
+.item-menu a {
+  text-decoration: none;
+  color: #B9BEBA; }
+
+form {
+  width: 300px;
+  padding: 16px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #ccc; }
+
+form label {
+  width: 250px;
+  font-weight: bold;
+  display: inline-block; }
+
+form input[type="text"],
+form input[type="email"] {
+  width: 180px;
+  padding: 3px 10px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  display: inline-block; }
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 32px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  color: #fff; }
+
+.enviar:hover {
+  filter: brightness(150%); }
+
+form input[type="submit"]:hover {
+  cursor: pointer; }
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  /*resize: vertical | horizontal | none | both*/
+  resize: none;
+  display: block; }
+
+.reservas {
+  background-image: linear-gradient(to right, black, grey); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "Open Serif";
+  src: url("../fonts/OpenSerif-Book.ttf"); }
+
+* {
+  font-family: "Open Serif"; }
+
+main {
+  display: block;
+  color: #fff; }
+
+.main {
+  background-color: #000; }
+  .main h1 {
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 50px; }
+  .main p {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 50px; }
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column; }
+
+html {
+  height: 100%; }
+
+.carousel {
+  overflow: hidden;
+  margin-bottom: 00px; }
+
+.carousel-inner {
+  height: 570px; }
+
+.carousel-item img {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  min-height: 500px; }
+
+.imgPaleta {
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 00px; }
+
+.imgPaleta img {
+  background-image: "https://media.babolat.com//image/upload/f_auto,q_auto,f_auto,q_auto,c_crop,w_2000,h_751/Website_content/Padel_News/02092020-Launch/padel-equipment/equipment-banner-2.jpg";
+  width: 100%;
+  height: auto;
+  padding-bottom: 0px; }
+
+.predio {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0b0b0b;
+  flex-wrap: wrap; }
+
+.predio img {
+  width: 50%;
+  height: auto; }
+
+.predio p {
+  width: 50vw;
+  height: auto;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 50px; }
+
+.fotoPredio {
+  vertical-align: top; }
+
+.footer {
+  display: flex;
+  height: 100px;
+  background-color: #e3eaec;
+  justify-content: space-around;
+  padding-top: 50px;
+  width: 100%;
+  bottom: 00;
+  margin-top: auto; }
+
+.colorFooter {
+  color: #000; }
+
+.sobreNosotros {
+  background-color: #000; }
+
+.fotosSobreNosotros {
+  display: flex; }
+
+.sn1, .sn2, .sn3 {
+  max-width: 33%;
+  height: auto; }
+
+* {
+  box-sizing: border-box; }
+
+/*Es un menú mobile first porque esta query sólo se aplica cuando el ancho de la pantalla es MAYOR a 768px*/
+@media screen and (min-width: 768px) {
+  .boton-menu {
+    display: none; }
+  .carousel {
+    height: 620px; }
+  .carousel-inner {
+    height: 570px; }
+  .carousel-item img {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    min-height: 750px; }
+  .barra-navegacion .lista-menu {
+    display: block; }
+  .item-menu {
+    list-style: none;
+    display: inline-block;
+    line-height: 8vh;
+    margin: 0 0.5em;
+    padding: 0 5px;
+    border-bottom: 0px; } }
+
+@media screen and (min-width: 768px) {
+  .navBackground ul {
+    align-items: center; }
+  header ul li a {
+    color: aliceblue; }
+  .imgPaleta {
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 00px; }
+  .predio {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0b0b0b; }
+  .predio img {
+    width: 50%;
+    height: auto; }
+  .predio p {
+    width: 50%;
+    height: auto;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 50px; } }
+
+/* SEDES*/
+.bodySedes {
+  display: grid;
+  min-height: 100%;
+  background-color: #000; }
+
+.sedes {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "fotoSede fotoSede" "sede1 sede2" "sede3 sede4" "sede5 sede6";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 320px 1fr 1fr 1fr;
+  height: 100vh;
+  margin-bottom: 700px; }
+  .sedes .fotoSede {
+    grid-area: fotoSede;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 200px;
+    position: relative;
+    display: inline-block;
+    text-align: center; }
+  .sedes .textoSede {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    font-style: oblique; }
+  .sedes .imagenSede {
+    width: 100%;
+    filter: brightness(0.3); }
+  .sedes .sede1 {
+    grid-area: sede1;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    display: block; }
+    .sedes .sede1 h2 {
+      vertical-align: bottom;
+      color: white; }
+    .sedes .sede1 .imgSede1 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+  .sedes .sede2 {
+    grid-area: sede2;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-left: 50px; }
+    .sedes .sede2 .imgSede2 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+    .sedes .sede2 h2 {
+      vertical-align: bottom;
+      color: aliceblue; }
+  .sedes .sede3 {
+    grid-area: sede3;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 50px; }
+    .sedes .sede3 .imgSede3 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+    .sedes .sede3 h2 {
+      vertical-align: bottom;
+      color: aliceblue; }
+  .sedes .sede4 {
+    grid-area: sede4;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 50px; }
+    .sedes .sede4 h2 {
+      vertical-align: bottom;
+      color: aliceblue; }
+    .sedes .sede4 .imgSede4 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+  .sedes .sede5 {
+    grid-area: sede5;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 50px; }
+    .sedes .sede5 h2 {
+      vertical-align: bottom;
+      color: aliceblue; }
+    .sedes .sede5 .imgSede5 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+  .sedes .sede6 {
+    grid-area: sede6;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    background-color: #000;
+    margin-left: 50px; }
+    .sedes .sede6 .imgSede6 {
+      width: 40vh;
+      height: 80%;
+      justify-content: center; }
+    .sedes .sede6 h2 {
+      vertical-align: bottom;
+      color: aliceblue; }
+
+@media screen and (min-width: 768px) {
+  .sedes {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "fotoSede fotoSede fotoSede" "sede1 sede2 sede3" "sede4 sede5 sede6";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 320px 1fr 1fr;
+    height: 100vh; }
+    .sedes .sede3 {
+      margin-top: 100px;
+      margin-left: 50px; }
+  .sede1 {
+    margin-left: 100px; }
+  .sede5 {
+    margin-left: 50px; } }
+
+/*CONSTRUCCION CANCHAS*/
+.constr img {
+  height: 600px;
+  width: 100%;
+  overflow: hidden; }
+
+.bodyConst {
+  background-color: #000; }
+
+.proyectos {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "proy1 proy2" "proy3 proy4" "proy5 proy6";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh; }
+
+.imgConstr {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  display: flex; }
+
+.textoConstr {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  font-style: oblique; }
+
+.mejores {
+  margin-top: 50px;
+  text-align: center;
+  font-style: unset;
+  text-decoration: underline; }
+
+.proy1 {
+  grid-area: proy1; }
+
+.proy2 {
+  grid-area: proy2; }
+
+.proy3 {
+  grid-area: proy3; }
+
+.proy4 {
+  grid-area: proy4; }
+
+.proy5 {
+  grid-area: proy5; }
+
+.proy6 {
+  grid-area: proy6; }
+
+.proy1 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  background-color: #000;
+  margin-left: 20px;
+  display: block; }
+
+.imgProy1 {
+  width: 40vh;
+  height: 80%;
+  justify-content: center; }
+
+.proy1 h2 {
+  vertical-align: bottom;
+  color: white; }
+
+.proy2 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  background-color: #000;
+  margin-left: 50px; }
+
+.imgProy2 {
+  width: 40vh;
+  height: 80%;
+  justify-content: center; }
+
+.proy2 h2 {
+  vertical-align: bottom;
+  color: aliceblue; }
+
+.proy3 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: #000;
+  margin-left: 20px; }
+
+.imgProy3 {
+  width: 40vh;
+  height: 75%;
+  justify-content: center; }
+
+.proy3 h2 {
+  vertical-align: bottom;
+  color: aliceblue; }
+
+.proy4 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: #000;
+  margin-left: 50px; }
+
+.imgProy4 {
+  width: 40vh;
+  height: 80%;
+  justify-content: center; }
+
+.proy4 h2 {
+  vertical-align: bottom;
+  color: aliceblue; }
+
+.proy5 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: #000;
+  margin-left: 20px; }
+
+.proy5 h2 {
+  vertical-align: bottom;
+  color: aliceblue; }
+
+.imgProy5 {
+  width: 40vh;
+  height: 80%;
+  justify-content: center; }
+
+.proy6 {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: #000;
+  margin-left: 50px; }
+
+.imgProy6 {
+  width: 40vh;
+  height: 80%;
+  justify-content: center; }
+
+.proy6 h2 {
+  vertical-align: bottom;
+  color: aliceblue; }
+
+.footerConst {
+  display: flex;
+  height: 100px;
+  background-color: #e3eaec;
+  justify-content: space-around;
+  padding-top: 50px;
+  width: 100%;
+  bottom: 00;
+  margin-top: 500px; }
+
+.abajo {
+  margin-top: 500px; }
+
+@media screen and (min-width: 768px) {
+  .proyectos {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "proy1 proy2 proy3" "proy4 proy5 proy6";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh; }
+  .proy3 {
+    margin-top: 100px;
+    margin-left: 50px; }
+  .proy1 {
+    margin-left: 50px; }
+  .proy5 {
+    margin-left: 50px; } }
