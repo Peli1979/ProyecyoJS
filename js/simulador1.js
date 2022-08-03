@@ -1,6 +1,13 @@
 
  let precioHoraDia = 2000 
  let preciohoraNoche=3000
+ 
+ const lunes=[17, 18, 19, 20, 21, 22, 23]
+ const martes=[17, 18, 19, 20, 21, 22, 23]
+ const miercoles=[17, 18, 19, 20, 21, 22, 23]
+ const jueves=[17, 18, 19, 20, 21, 22, 23]
+ const viernes=[17, 18, 19, 20, 21, 22, 23]
+ 
 
  function reserva(){
     
@@ -24,11 +31,13 @@
    
     
     let horarioReserva =+prompt("elige un horario de 17 a 23hs: ")
+    
+    if (lunes.includes(horarioReserva)=false){
+        alert("no es un horario posible")
+        horarioReserva=+prompt("elige un horario de 17 a 23hs: ")
+   }
+   
 
-    while((horarioReserva<17) || (horarioReserva>23)){alert("No es un horario posible")
-        horarioReserva=+prompt("vuelve a eligir un horario de 17 a 23hs: ")
-    }
-        
    
 
     let ingresarNombre = prompt("Ingresar nombre: ")
