@@ -1,13 +1,20 @@
 
+
+
+
  let precioHoraDia = 2000 
  let preciohoraNoche=3000
  
- const lunes=[17, 18, 19, 20, 21, 22, 23]
- const martes=[17, 18, 19, 20, 21, 22, 23]
- const miercoles=[17, 18, 19, 20, 21, 22, 23]
- const jueves=[17, 18, 19, 20, 21, 22, 23]
- const viernes=[17, 18, 19, 20, 21, 22, 23]
+ const horas=[17, 18, 19, 20, 21, 22, 23]
+ const disponibilidades=[
+    {dia:"lunes", hora:horas}, 
+    {dia:"martes", hora:horas}, 
+    {dia:"miercoles", hora:horas}, 
+    {dia:"jueves", hora:horas}, 
+    {dia:"viernes", hora:horas} ]
  
+ const reservas=[]
+
 
  function reserva(){
     
@@ -16,7 +23,11 @@
 
 
     let diaReserva = prompt("elige un dia: LUNES/MARTES/MIERCOLES/JUEVES/VIERNES")
-
+    
+    
+    
+    
+            
     if((diaReserva=="lunes") || (diaReserva=="LUNES"))  {
         alert("Elegiste lunes")}
     else if((diaReserva=="martes")||(diaReserva=="MARTES") )
@@ -27,12 +38,15 @@
         alert("elegiste jueves")
     else if((diaReserva=="viernes")||(diaReserva=="VIERNES"))
         alert("elegiste viernes")
-    else{alert("no es un dia de la semana")+exit}
+    else{alert("no es un dia de la semana")
+    diaReserva = prompt("elige un dia: LUNES/MARTES/MIERCOLES/JUEVES/VIERNES")
+}
+    
    
     
     let horarioReserva =+prompt("elige un horario de 17 a 23hs: ")
     
-    if (lunes.includes(horarioReserva)=false){
+    while (horas.includes(horarioReserva)==false){
         alert("no es un horario posible")
         horarioReserva=+prompt("elige un horario de 17 a 23hs: ")
    }
