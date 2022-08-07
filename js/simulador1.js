@@ -6,15 +6,14 @@
  let preciohoraNoche=3000
  
  const horas=[17, 18, 19, 20, 21, 22, 23]
- const disponibilidades=[
-    {dia:"lunes", hora:horas}, 
-    {dia:"martes", hora:horas}, 
-    {dia:"miercoles", hora:horas}, 
-    {dia:"jueves", hora:horas}, 
-    {dia:"viernes", hora:horas} ]
+ const dias=["lunes", "martes", "miercoles", "jueves", "viernes"]
  
- const reservas=[]
-
+ class Reservas{
+    constructor(dia, hora) {
+        this.dia = dia;
+        this.hora = hora;
+    }
+}
 
  function reserva(){
     
@@ -24,23 +23,14 @@
 
     let diaReserva = prompt("elige un dia: LUNES/MARTES/MIERCOLES/JUEVES/VIERNES")
     
-    
-    
+    while (dias.includes(diaReserva)==false){
+        alert("no es un dia posible")
+        diaReserva=prompt("elige un dia: LUNES/MARTES/MIERCOLES/JUEVES/VIERNES") 
+    }
     
             
-    if((diaReserva=="lunes") || (diaReserva=="LUNES"))  {
-        alert("Elegiste lunes")}
-    else if((diaReserva=="martes")||(diaReserva=="MARTES") )
-        alert("elegiste martes")
-    else if((diaReserva=="miercoles")||(diaReserva=="MIERCOLES") )
-        alert("elegiste miercoles")
-    else if((diaReserva=="jueves")||(diaReserva=="JUEVES") )
-        alert("elegiste jueves")
-    else if((diaReserva=="viernes")||(diaReserva=="VIERNES"))
-        alert("elegiste viernes")
-    else{alert("no es un dia de la semana")
-    diaReserva = prompt("elige un dia: LUNES/MARTES/MIERCOLES/JUEVES/VIERNES")
-}
+   
+
     
    
     
@@ -70,9 +60,28 @@
     
     
     alert("Nombre: " +ingresarNombre+"\nTurno dia: "+diaReserva+ "\nHorario: "+horarioReserva+"HS \nHasta: " +hasta+"hs\nTOTAL A PAGAR: "+costo+"pesos") 
-}            
+    
+
+    const reservaciones=[]
+    reservaciones.push(new Reservas((diaReserva), (horarioReserva)) )
+
+    if(reservaciones[0]==reservaciones[1]){
+    alert("no es una reserva posible"+exit)
+    
+}
+
+ }
+
+        
 
 reserva()
+
+
+        
+
+
+
+
 
 while (nuevaReserva=prompt("Quieres hacer una nueva reserva: ")){
     if((nuevaReserva=="si")|| (nuevaReserva=="SI")){reserva()}
