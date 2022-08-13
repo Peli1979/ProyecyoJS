@@ -1,6 +1,6 @@
 
 
-
+/*
 
  let precioHoraDia = 2000 
  let preciohoraNoche=3000
@@ -63,7 +63,7 @@
     
 
     const reservaciones=[]
-    reservaciones.push(new Reservas((diaReserva), (horarioReserva)) )
+    reservaciones.push(new Reservas((diaReserva), (horarioReserva)) );
 
     if(reservaciones[0]==reservaciones[1]){
     alert("no es una reserva posible"+exit)
@@ -97,7 +97,7 @@ while (nuevaReserva=prompt("Quieres hacer una nueva reserva: ")){
 
 
 
-
+*/
 
 
 
