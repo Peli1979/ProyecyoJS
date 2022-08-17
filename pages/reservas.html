@@ -44,14 +44,21 @@
         <label for="email">Email:
             <input type="email" placeholder="xxx@gmail.com" name="email" id="email"><br>
         </label>
-        <label for="cantHoras">Cantidad horas</label>
-        <select name="" id="cantHoras">
-          <option>Elija cant horas</option>
-          <option value="1">1 hora</option>
-        </select>
+        
         
         </select>
-  
+        <label for="Sedes">Sedes:
+        <select name="" id="sedeReserva">
+          <option >Elija una Sede</option>
+          <option value="Mar del Plata">Mar del Plata</option>
+          <option value="Urquiza">Urquiza</option>
+          <option value="Belgrano">Belgrano</option>
+          <option value="Rosario">Rosario</option>
+          <option value="Cordoba">Cordoba</option>
+          <option value="San Isidro">San Isidro</option>
+        </select>
+      </label>
+      <label for="Dia">Dia y Horario:</label>
         <select name="" id="dias">
           <option>Elija dias</option>
           <option value="lunes">lunes</option>
@@ -66,6 +73,12 @@
           <option value="20 a 21">20 a 21</option>
           <option value="21 a 22">21 a 22</option>
           <option value="22 a 23">22 a 23</option>
+        </select>
+       
+        <label for="cantHoras">Cantidad horas</label>
+        <select name="" id="cantHoras">
+          <option>Elija cant horas</option>
+          <option value="1">1 hora</option>
         </select>
         <label for="Mensaje"> Mensaje:<br>
             <textarea placeholder="Mensaje"></textarea>
@@ -210,7 +223,7 @@
   <!-- Copyright -->
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="/js/dom.js"></script>
+    <script src="/js/reservas.js"></script>
 </body>
 
 </html>

@@ -119,6 +119,22 @@ textarea {
 .reservas {
   background-image: linear-gradient(to right, black, grey); }
 
+#muestra {
+
+  
+  border: solid;
+  border-color: #462d3f;
+  border-radius: 10px;
+ 
+  margin: auto;
+  background-color: rgb(46, 44, 57); 
+
+}
+
+#muestra h1 {
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -297,7 +313,10 @@ html {
 .sedes {
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "fotoSede fotoSede" "sede1 sede2" "sede3 sede4" "sede5 sede6";
+  grid-template-areas: "fotoSede fotoSede"
+ "sede1 sede2"
+ "sede3 sede4"
+ "sede5 sede6";
   grid-template-columns: 50% 50%;
   grid-template-rows: 320px 1fr 1fr 1fr;
   height: 100vh;
@@ -420,7 +439,9 @@ html {
   .sedes {
     box-sizing: border-box;
     display: grid;
-    grid-template-areas: "fotoSede fotoSede fotoSede" "sede1 sede2 sede3" "sede4 sede5 sede6";
+    grid-template-areas: "fotoSede fotoSede fotoSede"
+ "sede1 sede2 sede3"
+ "sede4 sede5 sede6";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 320px 1fr 1fr;
     height: 100vh; }
@@ -444,7 +465,9 @@ html {
 .proyectos {
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "proy1 proy2" "proy3 proy4" "proy5 proy6";
+  grid-template-areas: "proy1 proy2"
+ "proy3 proy4"
+ "proy5 proy6";
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr 1fr 1fr;
   height: 100vh; }
@@ -616,7 +639,8 @@ html {
   .proyectos {
     box-sizing: border-box;
     display: grid;
-    grid-template-areas: "proy1 proy2 proy3" "proy4 proy5 proy6";
+    grid-template-areas: "proy1 proy2 proy3"
+ "proy4 proy5 proy6";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     height: 100vh; }
