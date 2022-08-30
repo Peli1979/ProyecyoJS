@@ -29,18 +29,46 @@ mensaje.addEventListener("input",handleInput)
 // Guarda la reserva
 function handleClick(e){
     e.preventDefault()
-    if(!turnoOcupado(misReservas, reserva)) {
-        muestra.innerHTML = `<h1>Reserva Confirmada!!</h1> <p>Nombre y Apellido: ${reserva.nombre} ${reserva.apellido}</p><p> email: ${reserva.email}</p><p> Sede: ${reserva.sede}</p><p> Importe a abonar: $${reserva.costoTotal}</p> <p>Dia Elegido: ${reserva.dias}</p> <p>Horario:${reserva.horario}</p><p>Deja un Mensaje:${reserva.mensaje}</p>`
+   
+   if(!turnoOcupado(misReservas, reserva)) {
         nombreUsuario.value = ""
         apellidoUsuario.value = ""
         dias.value = ""
         horario.value = ""
-        const nuevaReserva = {...reserva}
-        misReservas.push(nuevaReserva)
-        localStorage.setItem('misReservas', JSON.stringify(misReservas));
+        Swal.fire({
+            title: 'Confirmas la Reserva?',
+            
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+            Swal.fire('Reserva Confirmada!', '', 'success')
+            muestra.innerHTML = `<h1>Reserva Confirmada!!</h1> <p>Nombre y Apellido: ${reserva.nombre} ${reserva.apellido}</p><p> email: ${reserva.email}</p><p> Sede: ${reserva.sede}</p><p> Importe a abonar: $${reserva.costoTotal}</p> <p>Dia Elegido: ${reserva.dias}</p> <p>Horario:${reserva.horario}</p><p>Deja un Mensaje:${reserva.mensaje}</p>`
+            const nuevaReserva = {...reserva}
+            misReservas.push(nuevaReserva)
+            localStorage.setItem('misReservas', JSON.stringify(misReservas));
+            } else if (result.isDenied) {
+            Swal.fire('Se Cancelo la Reserva!!', '', 'info')
+            }
+        })
+        
+        
+        
+       
     } else {
-        muestra.innerHTML = 'Ups, el turno está ocupado'
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Turno Ocupado, Intentalo Nuevamente!!',
+           
+          })
+        //muestra.innerHTML = 'Ups, el turno está ocupado'
     }
+
+    
     //console.log(turnoOcupado(misReservas, reserva))
-    horario.setAttribute.style('backgroundColor', 'red');    
+    horario.setAttribute.style('backgroundColor', 'red');   
+    
 }
