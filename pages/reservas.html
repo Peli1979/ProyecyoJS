@@ -42,8 +42,8 @@
     
 
     <form action="#" method="get">
-        <input type="text" placeholder="NOMBRE" id="nombre"><br>
-        <input type="text" placeholder="APELLIDO" id="apellido"><br>
+        <input type="text" placeholder="NOMBRE" id="nombre" name="name"><br>
+        <input type="text" placeholder="APELLIDO" id="apellido" name="last"><br>
         <label for="email">Email:
             <input type="email" placeholder="xxx@gmail.com" name="email" id="email"><br>
         </label>
@@ -84,7 +84,7 @@
           <option value="1">1 hora</option>
         </select>
         <label for="mensaje"> Mensaje:<br>
-            <textarea placeholder="Mensaje" id="mensaje"></textarea>
+            <textarea placeholder="Mensaje" id="mensaje" name="message"></textarea>
         </label> <br>
         
 
@@ -93,6 +93,7 @@
         <input class="enviar animate__bounceIn btn btn-primary" type="submit" value="ENVIAR" id="botonEnviar">
         
     </form>
+    
     <div id="muestra"></div>
 </main>
 <footer class="text-center text-white" style="background-color: #f1f1f1;">

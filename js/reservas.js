@@ -27,14 +27,25 @@ horario.addEventListener("change",handleSelect)
 mensaje.addEventListener("input",handleInput)
 
 // Guarda la reserva
+
+
+
+   
+
+
+
 function handleClick(e){
     e.preventDefault()
-   
+
+    
    if(!turnoOcupado(misReservas, reserva)) {
         nombreUsuario.value = ""
         apellidoUsuario.value = ""
         dias.value = ""
         horario.value = ""
+        
+        
+        setTimeout(()=> {
         Swal.fire({
             title: 'Confirmas la Reserva?',
             
@@ -52,12 +63,14 @@ function handleClick(e){
             } else if (result.isDenied) {
             Swal.fire('Se Cancelo la Reserva!!', '', 'info')
             }
-        })
         
+        })
+    }, 2000)
         
         
        
     } else {
+        setTimeout(()=> {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -65,10 +78,10 @@ function handleClick(e){
            
           })
         //muestra.innerHTML = 'Ups, el turno está ocupado'
-    }
-
+        }, 2000)
+    
     
     //console.log(turnoOcupado(misReservas, reserva))
     horario.setAttribute.style('backgroundColor', 'red');   
     
-}
+}}

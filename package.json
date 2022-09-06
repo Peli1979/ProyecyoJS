@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "luxon": "^3.0.3"
+  },
+  "name": "reservas",
+  "version": "1.0.0",
+  "description": "reserva turnos web padel",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peli1979/ProyecyoJS.git"
+  },
+  "author": "Martin Rozada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peli1979/ProyecyoJS/issues"
+  },
+  "homepage": "https://github.com/Peli1979/ProyecyoJS#readme"
+}
