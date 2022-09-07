@@ -26,13 +26,20 @@ dias.addEventListener("change",handleSelect)
 horario.addEventListener("change",handleSelect)
 mensaje.addEventListener("input",handleInput)
 
+const sedesJson = await fetch('../js/data/sedes.json')
+  .then((response) => response.json())
+  .then((data) => fillSedesOptions(data));
+
+function fillSedesOptions(data)
+{
+    let sedesOptions = "";
+    data.sedes.forEach(element => sedesOptions += '<option value="' + element + '">' + element + "</option>");
+    sedeReserva.innerHTML = sedesOptions;
+}
+
+
+
 // Guarda la reserva
-
-
-
-   
-
-
 
 function handleClick(e){
     e.preventDefault()
