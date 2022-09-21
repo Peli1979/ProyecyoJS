@@ -21,6 +21,7 @@ export function handleInput(event){
 }
 
 export function handleSelect(event){
+    
     const { id } = event.target
 
     switch (id){

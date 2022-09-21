@@ -37,6 +37,43 @@ function fillSedesOptions(data)
     sedeReserva.innerHTML = sedesOptions;
 }
 
+function validarInputs()
+{
+    let result = true;
+    if (nombreUsuario.value.length == 0)
+    {
+        result = false;
+        nombreUsuario.style.borderColor = "red";
+    }
+    if (apellidoUsuario.value.length == 0)
+    {
+        result = false;
+        apellidoUsuario.style.borderColor = "red";
+    }
+    if (email.value.length == 0)
+    {
+        result = false;
+        email.style.borderColor = "red";
+    }
+    if (sedeReserva.value=="")
+    {
+        result=false
+        sedeReserva.style.borderColor="red";
+
+    }
+
+    return result;
+}
+
+function validarEmail() 
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
+    {
+        return (true)
+    }
+    email.style.borderColor = "red";
+    return (false)
+}
 
 
 // Guarda la reserva
@@ -44,8 +81,18 @@ function fillSedesOptions(data)
 function handleClick(e){
     e.preventDefault()
 
-    
-   if(!turnoOcupado(misReservas, reserva)) {
+    if (!validarInputs())
+    {
+        alert("Debes completar los campos requeridos");
+        return;
+    }
+    if (!validarEmail())
+    {
+        alert("El formato del email es incorrecto");
+        return;
+    }
+
+    if(!turnoOcupado(misReservas, reserva)) {
         nombreUsuario.value = ""
         apellidoUsuario.value = ""
         dias.value = ""
